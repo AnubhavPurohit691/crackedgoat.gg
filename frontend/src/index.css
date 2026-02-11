@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+@theme {
+  --color-surface: #0a0a0a;
+  --color-surface-elevated: #141414;
+  --color-border: #262626;
+  --color-border-strong: #404040;
+  --color-muted: #737373;
+  --color-off: #525252;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fafafa;
+}
+
+/* Focus ring: white outline for a11y and B&W look */
+*:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Subtle selection */
+::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}

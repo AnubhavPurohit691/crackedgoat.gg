@@ -13,27 +13,35 @@ function Lobby() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white font-sans">
-      <h1 className="text-4xl font-bold mb-8">🎥 Mediasoup Video Chat</h1>
-      <form
-        onSubmit={handleJoinRoom}
-        className="flex flex-col gap-4 w-full max-w-sm"
-      >
-        <input
-          type="text"
-          value={roomId}
-          onChange={(e) => setRoomId(e.target.value)}
-          placeholder="Enter Room ID"
-          className="p-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-        <button
-          type="submit"
-          className="p-3 bg-blue-600 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-500"
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 font-sans">
+      <div className="w-full max-w-sm flex flex-col items-center">
+        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-2">
+          Video Chat
+        </h1>
+        <p className="text-neutral-400 text-sm mb-8">
+          Enter a room ID to join or create a call
+        </p>
+
+        <form
+          onSubmit={handleJoinRoom}
+          className="flex flex-col gap-4 w-full"
         >
-          Join Room
-        </button>
-      </form>
+          <input
+            type="text"
+            value={roomId}
+            onChange={(e) => setRoomId(e.target.value)}
+            placeholder="Room ID"
+            className="w-full px-4 py-3.5 bg-neutral-950 border border-neutral-700 rounded-lg text-white placeholder:text-neutral-500 focus:border-white focus:ring-1 focus:ring-white transition-colors"
+            required
+          />
+          <button
+            type="submit"
+            className="w-full py-3.5 bg-white text-black font-medium rounded-lg hover:bg-neutral-200 active:bg-neutral-300 transition-colors"
+          >
+            Join Room
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
